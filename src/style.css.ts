@@ -60,13 +60,14 @@ const product = style({
   padding: "1rem",
   display: "flex",
   justifyContent: "space-between",
+  alignItems: "center",
   gap: "0.2rem",
 });
 
 const productTitle = style({
   lineHeight: "24px",
   fontSize: "17px",
-  marginBottom: "0.3rem",
+  marginBottom: "0",
 });
 
 const productIcon = style({

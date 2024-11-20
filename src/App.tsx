@@ -3,7 +3,6 @@ import { ButtonMobile } from "@alfalab/core-components/button/mobile";
 import { Typography } from "@alfalab/core-components/typography";
 import { useState } from "react";
 import smart from "./assets/smart.png";
-import smile from "./assets/smile.png";
 import drums from "./assets/drums.png";
 import smileArrow from "./assets/smile-arrow.png";
 import gift from "./assets/gift.png";
@@ -20,7 +19,7 @@ import { Gap } from "@alfalab/core-components/gap";
 
 interface Product {
   title: string;
-  text: string;
+  text?: string;
   image: string;
   name: string;
   value: number;
@@ -28,64 +27,60 @@ interface Product {
 
 const products: Array<Product> = [
   {
+    title: "Бесплатные переводы",
+    image: transfer,
+    name: "free_transfer",
+    value: 0,
+  },
+  {
+    title: "Бесплатные уведомления",
+    text: "дебетовые карты",
+    image: free,
+    name: "free_pushes",
+    value: 0,
+  },
+  {
+    title: "Секретная подборка партнёров с кэшбэком",
+    image: gift,
+    name: "secret_cashback",
+    value: 0,
+  },
+  {
     title: "+1 топовая категория кэшбэка",
-    text: "5% на самое популярное",
+    text: "5%",
     image: smileArrow,
     name: "one_cashback",
     value: 0,
   },
   {
     title: "+1 попытка крутить барабан суперкэшбэка",
-    text: "Выше шанс выиграть до 100% в случайной категории",
     image: drums,
     name: "one_baraban",
     value: 0,
   },
   {
-    title: "Секретная подборка партнёров с кэшбэком",
-    text: "Доступ к специальным предложениям",
-    image: gift,
-    name: "secret_cashback",
-    value: 0,
-  },
-  {
     title: "Увеличенный лимит кэшбэка",
-    text: "7000 ₽ в месяц вместо 5000 ₽ за покупки в категориях",
+    text: "7 000 ₽/мес.",
     image: cashback,
     name: "limit_cashback",
     value: 0,
   },
   {
-    title: "+1% годовых",
-    text: "По накопительному Альфа-Счёту на ежедневный остаток",
+    title: "+1% годовых по накопительному счёту",
     image: percent,
     name: "alfa_schet",
     value: 0,
   },
-  {
-    title: "Бесплатные уведомления",
-    text: "Пуши и смс об операциях по всем дебетовым картам",
-    image: free,
-    name: "free_pushes",
-    value: 0,
-  },
-  {
-    title: "Бесплатные переводы",
-    text: "По России без ограничений по сумме",
-    image: transfer,
-    name: "free_transfer",
-    value: 0,
-  },
+
   {
     title: "Бесплатное снятие наличных",
-    text: "В банкоматах любых банков России",
+    text: "до 200 000 ₽",
     image: cash,
     name: "free_cash",
     value: 0,
   },
   {
     title: "Скидка 20% на комиссию на бирже",
-    text: "0,24% за сделки с ценными бумагами и валютой",
     image: discount,
     name: "",
     value: 0,
@@ -122,23 +117,28 @@ export const App = () => {
           >
             Альфа-Смарт
           </Typography.TitleResponsive>
-          <Typography.Text view="primary-medium" color="secondary">
-            Стоимость — 299 руб/мес
-          </Typography.Text>
         </div>
 
-        <div className={appSt.subscription}>
-          <img src={smile} alt="" width={24} height={24} />
-          <Typography.Text
-            view="primary-medium"
-            className={appSt.subscriptionText}
-          >
-            Подписка стоит 299 ₽, если тратите с карты 20 000 ₽ в месяц. Если
-            тратите меньше — 399 ₽
-          </Typography.Text>
-        </div>
+        <Gap size={4} />
 
-        <Gap size={8} />
+        <ButtonMobile
+          block
+          view="primary"
+          size="xs"
+          style={{
+            padding: "0.5rem",
+            position: "sticky",
+            top: "1rem",
+            zIndex: 100,
+          }}
+        >
+          <span style={{ marginBottom: "1rem", display: "block" }}>
+            Стоимость
+          </span>
+          <b>399 ₽/мес.</b>
+        </ButtonMobile>
+
+        <Gap size={4} />
 
         <div className={appSt.products}>
           <Typography.TitleResponsive
@@ -148,7 +148,7 @@ export const App = () => {
             view="small"
             className={appSt.productsTitle}
           >
-            В вашей подписке
+            Входит в подписку
           </Typography.TitleResponsive>
 
           {products.map((product) => (
@@ -164,20 +164,21 @@ export const App = () => {
                   {product.title}
                 </Typography.TitleResponsive>
 
-                <Typography.Text
-                  view="secondary-large"
-                  tag="p"
-                  color="secondary"
-                  className={appSt.productText}
-                >
-                  {product.text}
-                </Typography.Text>
+                {product.text && (
+                  <Typography.Text
+                    view="primary-medium"
+                    tag="p"
+                    className={appSt.productText}
+                  >
+                    {product.text}
+                  </Typography.Text>
+                )}
               </div>
               <img
                 src={product.image}
                 alt=""
-                width={96}
-                height={96}
+                width={50}
+                height={50}
                 className={appSt.productIcon}
               />
             </div>
