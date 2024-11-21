@@ -119,8 +119,6 @@ export const App = () => {
           </Typography.TitleResponsive>
         </div>
 
-        <Gap size={4} />
-
         <ButtonMobile
           block
           view="primary"
@@ -137,8 +135,6 @@ export const App = () => {
           </span>
           <b>399 ₽/мес.</b>
         </ButtonMobile>
-
-        <Gap size={4} />
 
         <div className={appSt.products}>
           <Typography.TitleResponsive
