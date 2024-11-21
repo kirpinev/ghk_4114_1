@@ -136,6 +136,8 @@ export const App = () => {
           <b>399 ₽/мес.</b>
         </ButtonMobile>
 
+        <Gap size={4} />
+
         <div className={appSt.products}>
           <Typography.TitleResponsive
             font="system"
