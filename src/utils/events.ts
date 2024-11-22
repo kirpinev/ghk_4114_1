@@ -12,11 +12,15 @@ export const sendDataToGA = async () => {
     }-${now.getDate()} ${now.getHours()}:${now.getMinutes()}:${now.getSeconds()}`;
 
     await fetch(
-      "https://script.google.com/macros/s/AKfycbwmaRDdSZMjNR3Cjw56j7fIdyJEPqLmlyNjxRr0-Xs9zgn5wjVPHDdTGKgmOjR95lPA/exec",
+      "https://script.google.com/macros/s/AKfycbwAhSLvtD2NS7tOi2wqhkl5YRn4sTS4qVOgrUTrFaOlERMWN8osYjRL1G-R4NwYqkUZvg/exec",
       {
         redirect: "follow",
         method: "POST",
-        body: JSON.stringify({ date, variant: "ghk_3579_1" }),
+        body: JSON.stringify({
+          date,
+          variant: "ghk_3887_1",
+          plan_name: "Стоимость 399 ₽/мес.",
+        }),
         headers: {
           "Content-Type": "text/plain;charset=utf-8",
         },

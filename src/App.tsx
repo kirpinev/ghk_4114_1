@@ -16,6 +16,7 @@ import { LS, LSKeys } from "./ls";
 import { appSt } from "./style.css";
 import { ThxLayout } from "./thx/ThxLayout";
 import { Gap } from "@alfalab/core-components/gap";
+import { sendDataToGA } from "./utils/events.ts";
 
 interface Product {
   title: string;
@@ -93,7 +94,7 @@ export const App = () => {
 
   const submit = () => {
     setLoading(true);
-    Promise.resolve().then(() => {
+    sendDataToGA().then(() => {
       LS.setItem(LSKeys.ShowThx, true);
       setThx(true);
       setLoading(false);
