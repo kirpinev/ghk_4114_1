@@ -120,24 +120,34 @@ export const App = () => {
           </Typography.TitleResponsive>
         </div>
 
-        <ButtonMobile
-          block
-          view="primary"
-          size="xs"
-          style={{
-            padding: "0.5rem",
-            position: "sticky",
-            top: "1rem",
-            zIndex: 100,
-          }}
-        >
-          <span style={{ marginBottom: "1rem", display: "block" }}>
-            Стоимость
-          </span>
-          <b>399 ₽/мес.</b>
-        </ButtonMobile>
+        <div style={{ textAlign: "center" }}>
+          <Typography.Text
+            view="primary-medium"
+            color="primary"
+            style={{ textAlign: "center" }}
+          >
+            Выберите план
+          </Typography.Text>
 
-        <Gap size={4} />
+          <ButtonMobile
+            block
+            view="primary"
+            size="xs"
+            style={{
+              padding: "0.5rem",
+              position: "sticky",
+              top: "1rem",
+              zIndex: 100,
+              width: "fit-content",
+              margin: "1rem auto",
+            }}
+          >
+            <span style={{ marginBottom: "1rem", display: "block" }}>
+              Стоимость
+            </span>
+            <b>399 ₽/мес.</b>
+          </ButtonMobile>
+        </div>
 
         <div className={appSt.products}>
           <Typography.TitleResponsive
@@ -185,7 +195,7 @@ export const App = () => {
         </div>
       </div>
 
-      <Gap size={72} />
+      <Gap size={96} />
 
       <div className={appSt.bottomBtn}>
         <ButtonMobile loading={loading} block view="primary" onClick={submit}>
