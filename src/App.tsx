@@ -126,7 +126,7 @@ export const App = () => {
             color="primary"
             style={{ textAlign: "center" }}
           >
-            Выберите план
+            Подключите подписку
           </Typography.Text>
 
           <ButtonMobile
