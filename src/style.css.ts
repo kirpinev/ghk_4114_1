@@ -78,6 +78,19 @@ const productText = style({
   marginBottom: 0,
 });
 
+const plans = style({
+  display: "flex",
+  justifyContent: "center",
+  gap: "0.5rem",
+  position: "sticky",
+  top: "0",
+  zIndex: 100,
+  boxSizing: "border-box",
+  backgroundColor: "white",
+  padding: "1rem 0",
+  marginTop: "-19px",
+});
+
 export const appSt = {
   bottomBtn,
   container,
@@ -90,4 +103,5 @@ export const appSt = {
   product,
   productIcon,
   productText,
+  plans,
 };

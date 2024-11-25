@@ -120,26 +120,22 @@ export const App = () => {
           </Typography.TitleResponsive>
         </div>
 
-        <div style={{ textAlign: "center" }}>
-          <Typography.Text
-            view="primary-medium"
-            color="primary"
-            style={{ textAlign: "center" }}
-          >
-            Подключите подписку
-          </Typography.Text>
+        <Typography.Text
+          view="primary-medium"
+          color="primary"
+          style={{ textAlign: "center" }}
+        >
+          Подключите подписку
+        </Typography.Text>
 
+        <div className={appSt.plans}>
           <ButtonMobile
             block
             view="primary"
             size="xs"
             style={{
               padding: "0.5rem",
-              position: "sticky",
-              top: "1rem",
-              zIndex: 100,
               width: "fit-content",
-              margin: "1rem auto",
             }}
           >
             <span style={{ marginBottom: "1rem", display: "block" }}>
