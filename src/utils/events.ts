@@ -18,7 +18,7 @@ export const sendDataToGA = async () => {
         method: "POST",
         body: JSON.stringify({
           date,
-          variant: "ghk_3887_1",
+          variant: "ghk_4114_1",
           plan_name: "Стоимость 399 ₽/мес.",
         }),
         headers: {
