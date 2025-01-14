@@ -139,7 +139,7 @@ export const App = () => {
             }}
           >
             <span style={{ marginBottom: "1rem", display: "block" }}>
-              Стоимость
+              Стандарт
             </span>
             <b>399 ₽/мес.</b>
           </ButtonMobile>
